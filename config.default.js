@@ -10,16 +10,16 @@ var config = {
 
   get mini_assets() { return !this.debug; }, // 是否启用静态文件的合并压缩，详见视图中的Loader
 
-  name: 'Nodeclub', // 社区名字
-  description: 'CNode：Node.js专业中文社区', // 社区的描述
+  name: 'zzbond', // 社区名字
+  description: '蜘蛛侠', // 社区的描述
   keywords: 'nodejs, node, express, connect, socket.io',
 
   // 添加到 html head 中的信息
   site_headers: [
     '<meta name="author" content="EDP@TAOBAO" />'
   ],
-  site_logo: '/public/images/cnodejs_light.svg', // default is `name`
-  site_icon: '/public/images/cnode_icon_32.png', // 默认没有 favicon, 这里填写网址
+  site_logo: '/public/images/lo2.png', // default is `name`
+  site_icon: '/public/images/cnode_icon_31.png', // 默认没有 favicon, 这里填写网址
   // 右上角的导航区
   site_navs: [
     // 格式 [ path, title, [target=''] ]
@@ -84,12 +84,11 @@ var config = {
 
   // github 登陆的配置
   GITHUB_OAUTH: {
-    clientID: 'your GITHUB_CLIENT_ID',
-    clientSecret: 'your GITHUB_CLIENT_SECRET',
-    callbackURL: 'http://cnodejs.org/auth/github/callback'
+    clientID: 'b0bdfac106ca6bc1a293',
+    clientSecret: '96c84b43400976c5c6ebb826e4e3d2d86767a0d2'
   },
   // 是否允许直接注册（否则只能走 github 的方式）
-  allow_sign_up: true,
+  allow_sign_up: false,
 
   // oneapm 是个用来监控网站性能的服务
   oneapm_key: '',
