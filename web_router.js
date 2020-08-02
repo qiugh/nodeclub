@@ -23,6 +23,8 @@ var github = require('./controllers/github');
 var search = require('./controllers/search');
 var passport = require('passport');
 var configMiddleware = require('./middlewares/conf');
+var githubMiddleware = require('./middlewares/github');
+
 var config = require('./config');
 
 var router = express.Router();
@@ -112,9 +114,7 @@ router.get('/rss', rss.index);
 
 // github oauth
 router.get('/auth/github', configMiddleware.github, passport.authenticate('github'));
-router.get('/auth/github/callback',
-  passport.authenticate('github', { failureRedirect: '/signin' }),
-  github.callback);
+router.get('/auth/github/callback',githubMiddleware.github,  github.callback);
 router.get('/auth/github/new', github.new);
 router.post('/auth/github/create', limit.peripperday('create_user_per_ip', config.create_user_per_ip, {showJson: false}), github.create);
 
