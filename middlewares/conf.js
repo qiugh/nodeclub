@@ -1,8 +1,7 @@
 var config = require('../config');
 
 exports.github = function (req, res, next) {
-  if (config.GITHUB_OAUTH.clientID === 'your GITHUB_CLIENT_ID') {
-    return res.send('call the admin to set github oauth.');
-  }
-  next();
+  const authorize_uri = 'https://github.com/login/oauth/authorize';
+  url = `${authorize_uri}?client_id=${config.GITHUB_OAUTH.clientID}`;
+  return res.redirect(url);
 };
